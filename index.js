@@ -16,24 +16,28 @@ class Numbers {
   printNumbers() {
     //print the numbers in data
     this.data.forEach((number, i) => {
-      console.log(`${number}`);
+      console.log(`${i}: ${number}`);
     });
   }
   odds() {
     //return the odd numbers in data
-    this.data.forEach((number, i) => {
+    /*this.data.forEach((number, i) => {
       if (number % 2 !== 0) {
         console.log(`${number}`);
       }
-    });
+    });*/
+
+    return this.data.filter((number) => number % 2 !== 0);
   }
   evens() {
     //return the even numbers in data
-    this.data.forEach((number, i) => {
+    /*this.data.forEach((number, i) => {
       if (number % 2 === 0) {
         console.log(`${number}`);
       }
-    });
+    });*/
+
+    return this.data.filter((number) => number % 2 === 0);
   }
   sum() {
     //return the sum of the numbers
@@ -57,9 +61,11 @@ class Numbers {
   }
   greaterThan(target) {
     //return the numbers greater than the target
+    return this.data.filter((number) => number > target);
   }
   howMany(target) {
     //return the count of a given number
+    return this.data.filter((number) => number === target).length;
   }
 }
 
